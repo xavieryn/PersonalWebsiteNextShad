@@ -1,4 +1,9 @@
 import Image from "next/image";
+import Introduction from "./component/Introduction";
+import Work from "./component/Work";
+import Projects from "./component/Projects";
+import Hobbies from "./component/Hobbies";
+import Education from "./component/Education";
 
 export default function Home() {
   return (
@@ -12,13 +17,14 @@ export default function Home() {
           height={38}
           priority
         />
-        
-        <ul className="list-inside text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Welcome to my website!
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ul>
+
+        <Introduction/>
+
+        <Work/>
+        <Projects/>
+        <Hobbies/>
+        <Education/>
+
 
         <div className="flex gap-4 items-center flex-col sm:flex-row">
           <a
