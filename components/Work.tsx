@@ -1,10 +1,20 @@
-import React from "react";
-
-export default function Work(){
-    return(
-        <ul className="list-inside text-sm text-left sm:center font-[family-name:var(--font-geist-mono)]">
-                <li >My work varies a lot. Here is my list!</li>
+// In Work.tsx or Work.ts
+interface WorkProps {
+    items: any[]; // You can replace `any[]` with a more specific type if known
+  }
+  
+  const Work: React.FC<WorkProps> = ({ items }) => {
+    return (
+      <div>
+        <h2>Work Experience</h2>
+        <ul>
+          {items.map((item, index) => (
+            <li key={index}>{item}</li> // Modify based on the structure of `item`
+          ))}
         </ul>
+      </div>
     );
-}
-
+  };
+  
+  export default Work;
+  

@@ -28,6 +28,10 @@ export default function Home() {
       onValue(collectionRef, (snapshot) => {
         const dataItem = snapshot.val();
 
+        // Log the dataItem to the console
+        console.log("Fetched data:", dataItem);
+        console.log("Hello????");
+
         // Check if dataItem exists
         if (dataItem) {
           // Convert the object values into an array
@@ -36,6 +40,8 @@ export default function Home() {
         }
       });
     };
+
+    
 
     // Fetch data when the component mounts
     fetchData();
@@ -54,14 +60,18 @@ export default function Home() {
         <h1 className="dark:invert">hi</h1>
 
         <Introduction/>
-
-        <Work/>
+        <Work items={data} />
         <Projects/>
         <Hobbies/>
         <Education/>
+        <div>is stuff actually changing
+
+        </div>
+
+        
         <ul>
           {data.map((item, index) => (
-            <li key={index}>{item}</li>
+            <li key={index}>{item} Hello?</li>
           ))}
         </ul>
 
