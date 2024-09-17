@@ -1,9 +1,9 @@
 import Image from "next/image";
-import Introduction from "./component/Introduction";
-import Work from "./component/Work";
-import Projects from "./component/Projects";
-import Hobbies from "./component/Hobbies";
-import Education from "./component/Education";
+import Introduction from "../components/Introduction";
+import Work from "../components/Work";
+import Projects from "../components/Projects";
+import Hobbies from "../components/Hobbies";
+import Education from "../components/Education";
 
 export default function Home() {
   return (
@@ -17,6 +17,7 @@ export default function Home() {
           height={38}
           priority
         />
+        <h1 className="dark:invert">hi</h1>
 
         <Introduction/>
 
