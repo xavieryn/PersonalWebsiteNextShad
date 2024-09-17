@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image";
 import Introduction from "../components/Introduction";
 import Work from "../components/Work";
@@ -5,7 +7,39 @@ import Projects from "../components/Projects";
 import Hobbies from "../components/Hobbies";
 import Education from "../components/Education";
 
+import React, { useEffect, useState } from "react";
+import cong from "../configuration"; // Assuming the correct path to your configuration file
+import { getDatabase, ref, onValue } from "firebase/database";
+
 export default function Home() {
+
+  const [data, setData] = useState<any[]>([]);
+
+  useEffect(() => {
+    // Initialize the Firebase database with the provided configuration
+    const database = getDatabase(cong);
+    
+    // Reference to the specific collection in the database
+    const collectionRef = ref(database, "/");
+
+    // Function to fetch data from the database
+    const fetchData = () => {
+      // Listen for changes in the collection
+      onValue(collectionRef, (snapshot) => {
+        const dataItem = snapshot.val();
+
+        // Check if dataItem exists
+        if (dataItem) {
+          // Convert the object values into an array
+          const displayItem = Object.values(dataItem) as object[];
+          setData(displayItem);
+        }
+      });
+    };
+
+    // Fetch data when the component mounts
+    fetchData();
+  }, []);
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
@@ -25,6 +59,11 @@ export default function Home() {
         <Projects/>
         <Hobbies/>
         <Education/>
+        <ul>
+          {data.map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
+        </ul>
 
 
         <div className="flex gap-4 items-center flex-col sm:flex-row">
