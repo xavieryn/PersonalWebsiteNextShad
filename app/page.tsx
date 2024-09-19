@@ -29,19 +29,22 @@ export default function Home() {
         const dataItem = snapshot.val();
 
         // Log the dataItem to the console
-        console.log("Fetched data:", dataItem);
+        console.log("Fetched data:", dataItem[1]['Education']['Olin College Of Engineering']['Title']);
         console.log("Hello????");
 
+        // THIS NO LONGER WORKS BECAUSE I UPDATED THE JSON TO NOT ONLY HAVE VALUES, NOW IT HAS DIFFERENT SECTIONS
+        // FIGURE THIS OUT!!!!
+
         // Check if dataItem exists
-        if (dataItem) {
+        if (dataItem[1]) {
           // Convert the object values into an array
+          console.log(dataItem[1].type());
           const displayItem = Object.values(dataItem) as object[];
           setData(displayItem);
         }
       });
     };
 
-    
 
     // Fetch data when the component mounts
     fetchData();
@@ -64,9 +67,7 @@ export default function Home() {
         <Projects/>
         <Hobbies/>
         <Education/>
-        <div>is stuff actually changing
-
-        </div>
+        <div>is stuff actually changing </div>
 
         
         <ul>

@@ -4,6 +4,8 @@ interface WorkProps {
   }
   
   const Work: React.FC<WorkProps> = ({ items }) => {
+    //{console.log('Hi')}
+
     return (
       <div>
         <h2>Work Experience</h2>
