@@ -7,7 +7,7 @@ export default function Introduction(){
                     Welcome to my website!
                 </li>
                 <li>I'm Xavier Nishikawa, a freshman at Olin College of Engineering.</li>
-                <li>I love programming and pineapple. </li>
+                <li>I love programming and business. </li>
         </ul>
     );
 }

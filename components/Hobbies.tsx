@@ -1,11 +1,31 @@
-import React from "react";
+import { useEffect } from "react";
 
-export default function Hobbies(){
-    return(
-        <ul className="list-inside text-sm text-center sm:center font-[family-name:var(--font-geist-mono)]">
-            <li >My hobbies varies a lot. Here is my list!</li>
-
-        </ul>
-    );
+// In Work.tsx or Work.ts
+interface ProjectProps {
+  hobbies: Array<{ Title: string; Description: string  }>; // hobbies is an array of objects, each with a sections property
 }
+  
+  const Hobbies: React.FC<ProjectProps> = ({ hobbies }) => {
+    //{console.log('Hi')}
+    console.log(hobbies)
+    return (
+      <div>
+        <h2>Hobbies Experience</h2>
+        <ul>
+          {Object.entries(hobbies).map(([key, value]) => (
+
+            <li> 
+               <h3> {value.Title}</h3>
+               <h3>{value.Description}</h3>
+
+                <h3>Hello?</h3>
+                {/* {value.title} */}
+            </li> // Modify based on the structure of `item`
+          )) }
+        </ul>
+      </div>
+    );
+  };
+  
+  export default Hobbies;
 

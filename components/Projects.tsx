@@ -1,14 +1,31 @@
-import React from "react";
+import { useEffect } from "react";
 
-export default function Projects(){
-    return(
-        <ul className="list-inside text-sm text-center sm:center font-[family-name:var(--font-geist-mono)]">
-                <li className="mb-2">
-                    Welcome to my website!
-                </li>
-                <li>I'm Xavier Nishikawa, a freshman at Olin College of Engineering.</li>
-                <li>I love programming and chicken.</li>
-        </ul>
-    );
+// In Work.tsx or Work.ts
+interface ProjectProps {
+  projects: Array<{ Title: string; Description: string  }>; // projects is an array of objects, each with a sections property
 }
+  
+  const Work: React.FC<ProjectProps> = ({ projects }) => {
+    //{console.log('Hi')}
+    console.log(projects)
+    return (
+      <div>
+        <h2>Project Experience</h2>
+        <ul>
+          {Object.entries(projects).map(([key, value]) => (
+
+            <li> 
+               <h3> {value.Title}</h3>
+               <h3>{value.Description}</h3>
+
+                   
+                {/* {value.title} */}
+            </li> // Modify based on the structure of `item`
+          )) }
+        </ul>
+      </div>
+    );
+  };
+  
+  export default Work;
 

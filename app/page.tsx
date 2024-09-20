@@ -14,6 +14,10 @@ import { getDatabase, ref, onValue } from "firebase/database";
 export default function Home() {
 
   const [data, setData] = useState<any[]>([]);
+  //console.log("This is the data: ", data)
+  console.log(data);
+  const [loading, setLoading] = useState(true); // Add a loading state
+
 
   useEffect(() => {
     // Initialize the Firebase database with the provided configuration
@@ -28,19 +32,20 @@ export default function Home() {
       onValue(collectionRef, (snapshot) => {
         const dataItem = snapshot.val();
 
-        // Log the dataItem to the console
-        console.log("Fetched data:", dataItem[1]['Education']['Olin College Of Engineering']['Title']);
-        console.log("Hello????");
-
-        // THIS NO LONGER WORKS BECAUSE I UPDATED THE JSON TO NOT ONLY HAVE VALUES, NOW IT HAS DIFFERENT SECTIONS
-        // FIGURE THIS OUT!!!!
+        //console.log(dataItem)
 
         // Check if dataItem exists
-        if (dataItem[1]) {
+        if (dataItem) {
+          console.log(dataItem[1]['Education'])
+
           // Convert the object values into an array
-          console.log(dataItem[1].type());
-          const displayItem = Object.values(dataItem) as object[];
-          setData(displayItem);
+          const displayItems = Object.keys(dataItem[1]).map((key) => ({
+            id: key,
+            sections: dataItem[1][key]
+          }));
+          console.log("Display Items", displayItems)
+          setData(displayItems);
+          setLoading(false); // Set loading to false when data is fetched
         }
       });
     };
@@ -52,28 +57,26 @@ export default function Home() {
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <h1 className="dark:invert">hi</h1>
-
+  
         <Introduction/>
-        <Work items={data} />
-        <Projects/>
-        <Hobbies/>
-        <Education/>
+        
+        {loading ? (
+        <p>Loading...</p> // Show a loading state while fetching data
+      ) : (
+        <div>
+          {/* <Work work={data[3]} />  */}
+          {/* <Projects projects = {data[2]}/> */}
+          <Education education = {data[0]}/>
+          {/* <Hobbies hobbies = {data[1]}/> */}
+      
+        </div>
+      )}
+        
         <div>is stuff actually changing </div>
 
         
         <ul>
-          {data.map((item, index) => (
-            <li key={index}>{item} Hello?</li>
-          ))}
+          
         </ul>
 
 
