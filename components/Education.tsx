@@ -18,7 +18,7 @@ interface ProjectProps {
         <ul className="mt-4">
           {Object.entries(education.sections).map(([key, value]) => (
 
-            <li className="mt-4"> 
+            <li className="mt-4" key={key}> 
                <h3> {value.Title}</h3>
                <h3>{value.Description}</h3>
 

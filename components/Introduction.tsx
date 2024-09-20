@@ -1,14 +1,18 @@
 import React from "react";
+import SocialMedia from "./SocialMedia";
 
 export default function Introduction(){
     return(
-        <ul className="list-inside text-sm text-center sm:center font-[family-name:var(--font-geist-mono)]">
+        <div className="h-screen flex">
+            <ul className=" list-inside  sm:text-sm lg:text-5xl text-center sm:center font-[family-name:var(--font-geist-mono)]  ">
                 <li className="mb-2">
                     Welcome to my website!
                 </li>
-                <li>I'm Xavier Nishikawa, a freshman at Olin College of Engineering.</li>
-                <li>I love programming and business. </li>
-        </ul>
+                <li>I'm Xavier Nishikawa.</li>
+                <SocialMedia /> 
+            </ul>
+        </div>
+        
     );
 }
 
