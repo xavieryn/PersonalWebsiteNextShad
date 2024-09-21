@@ -5,7 +5,7 @@ interface ProjectProps {
   projects: Array<{ Title: string; Description: string  }>; // projects is an array of objects, each with a sections property
 }
   
-  const Work: React.FC<ProjectProps> = ({ projects }) => {
+  const Projects: React.FC<ProjectProps> = ({ projects }) => {
     //{console.log('Hi')}
     console.log(projects)
     return (
@@ -27,5 +27,5 @@ interface ProjectProps {
     );
   };
   
-  export default Work;
+  export default Projects;
 
