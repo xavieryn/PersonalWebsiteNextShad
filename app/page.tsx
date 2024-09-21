@@ -58,7 +58,7 @@ export default function Home() {
   return (
 
 
-    <div className=" flex min-h-full sm:w-full lg:flex-row flex-col sm:p-20 font-[family-name:var(--font-geist-sans)] ">
+    <div className=" flex min-h-full sm:w-full lg:flex-row flex-col  font-[family-name:var(--font-geist-sans)]  sm:p-20 lg:p-0">
 
       {/* First section: Introduction (Left side on PC) */}
       <div className="lg:fixed lg:w-1/2 flex-col w-full items-center justify-center text-center h-screen transform -translate-y-10 m-auto">
