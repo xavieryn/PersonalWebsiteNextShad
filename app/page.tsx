@@ -58,14 +58,15 @@ export default function Home() {
   return (
 
 
-    <div className=" flex min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      
-      <div className="lg:fixed lg:w-1/2 lg:flex lg:flex-col items-center    ">
-        <div className="m-auto"> <Introduction/></div>
-        
+    <div className=" flex min-h-full sm:w-full lg:flex-row flex-col sm:p-20 font-[family-name:var(--font-geist-sans)] ">
+
+      {/* First section: Introduction (Left side on PC) */}
+      <div className="lg:fixed lg:w-1/2 flex-col w-full items-center justify-center text-center h-screen transform -translate-y-10 m-auto">
+        <Introduction/>
       </div>
 
-      <div className="lg:w-1/2 lg:ml-[50%] lg:flex lg:flex-col items-center pl-20 pr-20">
+      {/* Second section: About Me, Work, etc (Right side on PC) */}
+      <div className="lg:w-1/2 lg:ml-[50%] w-full flex flex-col items-center pl-20 pr-20">
         {loading ? (
           <p>Loading...</p> // Show a loading state while fetching data
             ) : (
