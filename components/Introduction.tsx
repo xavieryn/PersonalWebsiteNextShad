@@ -11,15 +11,16 @@ export default function Introduction(){
     const { setTheme } = useTheme()
 
     return(
-        <div className=" flex justify-center items-center flex-col h-screen">
-            <ul className=" list-inside  sm:text-xl lg:text-4xl pt-20 lg:pr-20 sm:center font-[family-name:var(--font-geist-mono)]  ">
-                <li className="mb-2 ">
-                    Welcome to my website!
-                </li>
-                <li >I'm Xavier Nishikawa.</li>
+        <div className=" flex justify-center items-center flex-col h-screen  bg-black rounded-full  border-[#243c5a] borderwidth-3">
+            <div className="text-center text-xl lg:text-4xl font-[family-name:var(--font-geist-mono)]  ">
             
-            </ul>
-            <Button variant="outline" size="icon" onClick={() => theme =="light" ? (setTheme("dark"), theme="dark"): (setTheme("light"), theme="light")}>
+                    <p className="mb-2 ">
+                        Welcome to my website!
+                    </p>
+                    <p >I'm Xavier Nishikawa.</p>
+               
+            </div>
+            <Button className="mt-5"variant="outline" size="icon" onClick={() => theme =="light" ? (setTheme("dark"), theme="dark"): (setTheme("light"), theme="light")}>
                     <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
                     <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
             </Button>
