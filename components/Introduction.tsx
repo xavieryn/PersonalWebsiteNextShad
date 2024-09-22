@@ -21,7 +21,7 @@ export default function Introduction() {
                     <p >I'm Xavier Nishikawa.</p>
 
                 </div>
-                <Button className="mt-5" variant="outline" size="icon" onClick={() => theme == "light" ? (setTheme("dark"), theme = "dark") : (setTheme("light"), theme = "light")}>
+                <Button className="mt-1" variant="outline" size="icon" onClick={() => theme == "light" ? (setTheme("dark"), theme = "dark") : (setTheme("light"), theme = "light")}>
                     <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
                     <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
                 </Button>
