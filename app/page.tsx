@@ -58,7 +58,7 @@ export default function Home() {
   return (
 
 
-    <div className=" flex min-h-full sm:w-full lg:flex-row flex-col  font-[family-name:var(--font-geist-sans)]  sm:p-20 lg:p-0">
+    <div className=" flex min-h-full sm:w-full lg:flex-row flex-col  font-[family-name:var(--font-geist-sans)]  sm:p-20 lg:p-0 overflow-hidden">
 
       {/* First section: Introduction (Left side on PC) */}
       <div className="lg:fixed lg:w-1/2 flex-col w-full items-center justify-center text-center h-screen transform -translate-y-10 m-auto">
@@ -71,7 +71,7 @@ export default function Home() {
           <p>Loading...</p> // Show a loading state while fetching data
             ) : (
           <div>
-            <AboutMe/>
+            <AboutMe />
             { <Work work={data[3]} />  }
             {/* <Projects projects = {data[2]}/> */}
             <Education education = {data[0]}/>
