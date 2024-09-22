@@ -74,7 +74,7 @@ export default function Home() {
             <AboutMe />
             { <Work work={data[3]} />  }
             {/* <Projects projects = {data[2]}/> */}
-            <Education education = {data[0]}/>
+            {/* <Education education = {data[0]}/> */}
             {/* <Hobbies hobbies = {data[1]}/> */}
         
           </div>
