@@ -1,13 +1,12 @@
-import { useEffect } from "react";
 import Image from 'next/image'
 
 
 // In Work.tsx or Work.ts
-interface ProjectProps {
+interface WorkProps {
   work: Array<{ Title: string; Description: string; sections: Object; ImageCover: string; Date: string; Skills: string }>; // work is an array of objects, each with a sections property
 }
 
-const Work: React.FC<ProjectProps> = ({ work
+const Work: React.FC<WorkProps> = ({ work
 
 }) => {
   //{console.log('Hi')}
@@ -21,9 +20,9 @@ const Work: React.FC<ProjectProps> = ({ work
         <hr className="h-1 mx-auto my-4 bg-[hsl(255,67%,5%)] border-1 rounded  dark:bg-white" />
       </div>
 
-      <ul className="mt-4">
+      <ul className="lg:mt-4 sm:mt-1">
         {Object.entries(work.sections).map(([key, value]) => (
-          <div className="flex flex-col bg-bg-hsl([40, 20%, 97%]) dark:bg-[hsl(255,67%,5%)] dark:border-white  border-black border-2 w-full mx-auto max-w-full h-3/5  rounded-2xl lg:p-5 p-1 m-2">
+          <div className="flex flex-col bg-bg-hsl([40, 20%, 97%]) dark:bg-[hsl(255,67%,5%)] dark:border-white  border-black border-2 w-full mx-auto max-w-full h-3/5  rounded-2xl lg:p-5 p-2 m-2">
             <li className="sm:text-xs lg:text-base" key={key}>
               <h3> {value.Title}</h3>
               <h3>{value.Description}</h3>
@@ -34,7 +33,7 @@ const Work: React.FC<ProjectProps> = ({ work
                 width={300}
                 height={200}
                 alt="Cover Photo"
-                className="p-2" />
+                className="p-2 rounded-2xl" />
 
               <div className="flex flex-wrap">
                 {value.Skills.split(',').map((skill: string, skillIndex: number) => (
