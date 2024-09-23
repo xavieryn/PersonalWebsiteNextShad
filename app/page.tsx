@@ -66,7 +66,7 @@ export default function Home() {
       </div>
 
       {/* Second section: About Me, Work, etc (Right side on PC) */}
-      <div className="lg:w-1/2 lg:ml-[50%] w-full flex flex-col items-center pl-20 pr-20">
+      <div className="lg:w-1/2 lg:ml-[50%] w-full flex flex-col items-center lg:pl-20 lg:pr-20 pl-10 pr-10">
         {loading ? (
           <p>Loading...</p> // Show a loading state while fetching data
             ) : (
