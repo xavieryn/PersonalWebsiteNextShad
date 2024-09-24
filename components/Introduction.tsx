@@ -12,8 +12,8 @@ export default function Introduction() {
 
     return (
         <div className=" flex justify-center items-center flex-col h-screen ">
-            <div className="flex flex-col bg-hsl([40, 20%, 97%]) rounded-full dark:bg-[hsl(255,67%,5%)]  dark:border-white border-black border-4 w-3/5 h-3/5 justify-center items-center">
-                <div className="text-center text-xl lg:text-4xl font-[family-name:var(--font-geist-mono)]">
+            <div className="flex flex-col bg-hsl([40, 20%, 97%]) rounded-full dark:bg-[hsl(255,67%,5%)]  dark:border-white border-black border-4 w-3/5 h-3/5 lg:w-[500px] lg:h-[500px] justify-center items-center">
+                <div className="text-center text-xl lg:text-4xl font-[family-name:var(--font-geist-mono)] lg:p-4">
 
                     <p className="mb-2 ">
                         Welcome to my website!

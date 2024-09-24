@@ -22,10 +22,10 @@ const Projects: React.FC<ProjectProps> = ({ projects
 
       <ul className="lg:mt-4 sm:mt-1">
         {Object.entries(projects.sections).map(([key, value]) => (
-          <div className="flex flex-col bg-bg-hsl([40, 20%, 97%]) dark:bg-[hsl(255,67%,5%)] dark:border-white  border-black border-2 w-full mx-auto max-w-full h-3/5  rounded-2xl lg:p-5 p-2 m-2">
+          <div className="flex flex-col bg-[hsl(40, 20%, 97%)] dark:bg-[hsl(245,23%,14%)] dark:border-white  border-black border-2 w-full mx-auto max-w-full h-3/5  rounded-2xl lg:p-5 p-2 m-2">
             <li className="sm:text-xs lg:text-base" key={key}>
-              <h3> {value.Title}</h3>
-              <h3>{value.Description}</h3>
+            <h1 className="lg:text-xl font-bold p-1">{value.Title}</h1>
+            <h3>{value.Description}</h3>
 
               <Image
                 src={value.ImageCover}
@@ -36,7 +36,7 @@ const Projects: React.FC<ProjectProps> = ({ projects
 
               <div className="flex flex-wrap">
                 {value.Skills.split(',').map((skill: string, skillIndex: number) => (
-                  <span key={skillIndex} className="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded m-1">
+                  <span key={skillIndex} className="bg-gray-200 dark:bg-[hsl(247,59,32)] px-2 py-1 rounded m-1">
                     {skill.trim()}
                   </span>
                 ))}
