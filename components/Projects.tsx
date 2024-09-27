@@ -30,7 +30,7 @@ const Projects: React.FC<ProjectProps> = ({ projects
               <Image
                 src={value.ImageCover}
                 width={300}
-                height={200}
+                height={300}
                 alt="Cover Photo"
                 className="p-2 rounded-2xl" />
 
