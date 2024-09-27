@@ -1,10 +1,8 @@
 "use client"
 
-import Image from "next/image";
 import Introduction from "../components/Introduction";
 import Work from "../components/Work";
 import Projects from "../components/Projects";
-import Hobbies from "../components/Hobbies";
 import Education from "../components/Education";
 import AboutMe from "../components/AboutMe";
 

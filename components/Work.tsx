@@ -1,6 +1,3 @@
-import Image from 'next/image'
-
-
 // In Work.tsx or Work.ts
 interface WorkProps {
   work: Array<{ Title: string; Description: string; sections: Object; ImageCover: string; Date: string; Skills: string }>; // work is an array of objects, each with a sections property

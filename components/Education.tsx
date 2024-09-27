@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-
 // In Work.tsx or Work.ts
 interface ProjectProps {
   education: Array<{ Title: string; Description: string; sections: Object }>; // education is an array of objects, each with a sections property
