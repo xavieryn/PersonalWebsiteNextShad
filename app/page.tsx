@@ -9,10 +9,14 @@ import AboutMe from "../components/AboutMe";
 import React, { useEffect, useState } from "react";
 import cong from "../configuration"; // Assuming the correct path to your configuration file
 import { getDatabase, ref, onValue } from "firebase/database";
+interface SectionData {
+  id: string;
+  sections: object;  // Replace `any` with a more specific type if you know the structure of your sections
+}
 
 export default function Home() {
 
-  const [data, setData] = useState<any[]>([]);
+  const [data, setData] = useState<SectionData[]>([]);
   //console.log("This is the data: ", data)
   console.log(data);
   const [loading, setLoading] = useState(true); // Add a loading state
@@ -70,9 +74,9 @@ export default function Home() {
             ) : (
           <div>
             <AboutMe />
-            { <Work work={data[2]} />  }
-            { <Projects projects = {data[1]}/> }
-            { <Education education = {data[0]}/> }
+            { <Work work={data[2].sections} />  }
+            { <Projects projects = {data[1].sections}/> }
+            { <Education education = {data[0].sections}/> }
         
           </div>
           )}

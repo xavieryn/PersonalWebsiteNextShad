@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 // In Projects.tsx or Projects.ts
 interface ProjectProps {
-  projects: Array<{ Title: string; Description: string; sections: Object; ImageCover: string; Date: string; Skills: string }>; // projects is an array of objects, each with a sections property
+  projects: Array<{ Title: string; Description: string; ImageCover: string; Date: string; Skills: string }>; // projects is an array of objects, each with a sections property
 }
 
 const Projects: React.FC<ProjectProps> = ({ projects
@@ -21,7 +21,7 @@ const Projects: React.FC<ProjectProps> = ({ projects
       </div>
 
       <ul className="lg:mt-4 sm:mt-1">
-        {Object.entries(projects.sections).map(([key, value]) => (
+        {Object.entries(projects).map(([key, value]) => (
           <div className="flex flex-col bg-[hsl(40, 20%, 97%)] dark:bg-[hsl(245,23%,14%)] dark:border-white  border-black border-2 w-full mx-auto max-w-full h-3/5  rounded-2xl lg:p-5 p-2 m-2">
             <li className="sm:text-xs lg:text-base" key={key}>
             <h1 className="lg:text-xl font-bold p-1">{value.Title}</h1>

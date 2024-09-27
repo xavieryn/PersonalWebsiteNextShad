@@ -1,6 +1,6 @@
 // In Work.tsx or Work.ts
 interface WorkProps {
-  work: Array<{ Title: string; Description: string; sections: Object; ImageCover: string; Date: string; Skills: string }>; // work is an array of objects, each with a sections property
+  work: Array<{ Title: string; Description: string; ImageCover: string; Date: string; Skills: string }>; // work is an array of objects, each with a sections property
 }
 
 const Work: React.FC<WorkProps> = ({ work
@@ -18,9 +18,9 @@ const Work: React.FC<WorkProps> = ({ work
       </div>
 
       <ul className="sm:mt-1">
-        {Object.entries(work.sections).map(([key, value]) => (
-          <div className="flex flex-col bg-[hsl(40, 20%, 97%)] dark:bg-[hsl(245,23%,14%)] dark:border-white  border-black border-2 w-full mx-auto max-w-full h-3/5  rounded-2xl lg:p-5 p-2 m-4">
-            <li className="sm:text-xs lg:text-base" key={key}>
+        {Object.entries(work).map(([key, value]) => (
+          <div key={key} className="flex flex-col bg-[hsl(40, 20%, 97%)] dark:bg-[hsl(245,23%,14%)] dark:border-white  border-black border-2 w-full mx-auto max-w-full h-3/5  rounded-2xl lg:p-5 p-2 m-4">
+            <li className="sm:text-xs lg:text-base" >
               <div className="flex flex-row justify-between pr-4 ">
                 <h3> {value.Company}</h3> <h3>{value.Date}</h3>
               </div>
