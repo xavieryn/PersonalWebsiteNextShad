@@ -31,7 +31,7 @@ export default function Introduction() {
                     <p className="mb-2 ">
                         Welcome to my website!
                     </p>
-                    <p >I'm Xavier Nishikawa.</p>
+                    <p >I'&apos;m Xavier Nishikawa.</p>
 
                 </div>
                 <Button className="mt-1" variant="outline" size="icon" onClick={() => theme == "light" ? (setTheme("dark"), theme = "dark") : (setTheme("light"), theme = "light")}>
