@@ -11,7 +11,14 @@ import cong from "../configuration"; // Assuming the correct path to your config
 import { getDatabase, ref, onValue } from "firebase/database";
 interface SectionData {
   id: string;
-  sections: object;  // Replace `any` with a more specific type if you know the structure of your sections
+  sections: object;  
+}
+interface Project {
+  Title: string;
+  Description: string;
+  ImageCover: string;
+  Date: string;
+  Skills: string;
 }
 
 export default function Home() {
@@ -74,9 +81,9 @@ export default function Home() {
             ) : (
           <div>
             <AboutMe />
-            { <Work work={data[2].sections} />  }
-            { <Projects projects = {data[1].sections}/> }
-            { <Education education = {data[0].sections}/> }
+            { data[2] && <Work work={data[2].sections} />  }
+            { data[1] &&<Projects projects = {data[1].sections}/> }
+            { data[0] &&<Education education = {data[0].sections}/> }
         
           </div>
           )}
