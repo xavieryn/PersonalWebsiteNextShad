@@ -11,8 +11,14 @@ import cong from "../configuration"; // Assuming the correct path to your config
 import { getDatabase, ref, onValue } from "firebase/database";
 interface SectionData {
   id: string;
-  sections: object;  
-}
+  sections: {
+    Title: string;
+    Description: string;
+    ImageCover: string;
+    Date: string;
+    Skills: string;
+    Company: string;
+  }[];}
 
 export default function Home() {
 
