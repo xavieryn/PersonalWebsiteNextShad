@@ -1,12 +1,9 @@
 // In Work.tsx or Work.ts
 interface WorkProps {
-  work: Array<{ Title: string; Description: string; ImageCover: string; Date: string; Skills: string }>; // work is an array of objects, each with a sections property
+  work: Array<{ Title: string; Description: string; ImageCover: string; Date: string; Skills: string; Company: string }>; // work is an array of objects, each with a sections property
 }
 
-const Work: React.FC<WorkProps> = ({ work
-
-}) => {
-  //{console.log('Hi')}
+const Work: React.FC<WorkProps> = ({ work}) => {
   console.log(work)
 
 

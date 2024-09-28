@@ -13,13 +13,6 @@ interface SectionData {
   id: string;
   sections: object;  
 }
-interface Project {
-  Title: string;
-  Description: string;
-  ImageCover: string;
-  Date: string;
-  Skills: string;
-}
 
 export default function Home() {
 
