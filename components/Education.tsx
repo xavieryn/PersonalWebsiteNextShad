@@ -14,7 +14,7 @@ const Education: React.FC<ProjectProps> = ({ education
     <div className="mt-4" >
 
       <div className="m-5">
-        <p className="sm:text-base lg:text-xl">Experience</p>
+        <p className="sm:text-base lg:text-xl">Education</p>
         <hr className="h-1 mx-auto my-4 bg-[hsl(255,67%,5%)] border-1 rounded  dark:bg-white" />
       </div>
 

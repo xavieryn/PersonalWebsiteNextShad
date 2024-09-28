@@ -11,11 +11,15 @@ export default function AboutMe() {
                     <br/><br/>
                     I am working on:
                     <br/><br/>
-                    •	Andrew Ng’s ML Specialization Coursera course where I am learning the math behind the many functions used in Machine Learning.
-                    <br/>
                     •	This personal website, refreshing my knowledge on React and Web Dev overall.
                     <br/>
-                    •	A passion pursuit at my school where I will use an Arduino and a small DC motor to open our door without a key.
+                    •	A passion pursuit at my Olin where I will use an Arduino and a small DC motor to unlock the dorm door without a key.
+                    <br/>
+                    •	A project using a smart plug API to track when the laundry machines are being used.
+                    <br/>
+                    •	A project that trains an AI model to better understand people with stutters.
+
+
 
                 </p>
             </div>
