@@ -17,7 +17,7 @@ export default function Introduction() {
         <div className=" bg-center flex justify-center items-center flex-col h-screen w-full">
             
             <div className="flex flex-col bg-white bg-opacity-80 dark:bg-black dark:bg-opacity-80 rounded-full dark:border-white border-black border-4 w-3/5 h-3/5 lg:w-[500px] lg:h-[500px] justify-center items-center">
-                <div className="text-center text-xl lg:text-4xl font-[family-name:var(--font-geist-mono)] lg:p-4">
+                <div className="text-center text-xl lg:text-4xl  lg:p-4">
                     <p className="mb-2">
                         Welcome to my website!
                     </p>
