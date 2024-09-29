@@ -2,10 +2,6 @@ import React from "react";
 import SocialMedia from "./SocialMedia";
 import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
-import { MdOutlineSportsFootball } from "react-icons/md";
-import { FaGuitar } from "react-icons/fa6";
-import { GiClothes } from "react-icons/gi";
-import { FaLanguage } from "react-icons/fa";
 import { Button } from "@/components/ui/button"
 
 let theme = "light"
