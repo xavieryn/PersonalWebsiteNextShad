@@ -27,7 +27,7 @@ export default function Introduction() {
              dark:border-white border-black border-4 w-3/5 h-3/5 lg:w-[500px] lg:h-[500px] justify-center items-center z-10">
 
                 {/* Buttons Container */}
-                <div className={`z-5 absolute  lg:w-[500px] lg:h-[500px] transition-transform duration-500 dark:duration-500 ${isRotated ? 'rotate-180' : ''}`}>
+                <div className={`z-5 absolute  lg:w-[500px] lg:h-[500px] w-3/5 h-3/5 transition-transform duration-500 dark:duration-500 ${isRotated ? 'rotate-180' : ''}`}>
                     {/* Sun Button */}
                     <button
                         onClick={handleRotate}
