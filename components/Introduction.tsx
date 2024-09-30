@@ -6,7 +6,7 @@ import { WiMoonFull } from "react-icons/wi";
 
 
 export default function Introduction() {
-    const { theme, setTheme } = useTheme()
+    const { theme, setTheme } = useTheme();
     const [isRotated, setIsRotated] = useState(false);
     useEffect(() => {
         setTheme('light');
@@ -51,20 +51,20 @@ export default function Introduction() {
                         </p>
                         <p>I&apos;m Xavier Nishikawa.</p>
                     </div>
-                    <div>
-                        <a>
-                            <div> About me</div>
+                    <ul>
+                        <a href='#AboutMe'>
+                            <li> About me</li>
                         </a>
-                        <a>
-                            <div>Experiences</div>
+                        <a href='#Experiences'>
+                            <li>Experiences</li>
                         </a>
-                        <a>
-                            <div>Projects</div>
+                        <a href='#Projects'>
+                            <li>Projects</li>
                         </a>
-                        <a>
-                            <div>Education</div>
+                        <a href='#Education'>
+                            <li>Education</li>
                         </a>
-                    </div>
+                    </ul>
                     <SocialMedia />
                 </div>
             </div>

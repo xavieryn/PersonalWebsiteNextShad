@@ -14,7 +14,7 @@ const Projects: React.FC<ProjectProps> = ({ projects
 
 
   return (
-    <div className="mt-4 flex flex-col w-full" >
+    <div className="mt-4 flex flex-col w-full" id="Projects" >
       <div className="m-5">
         <p className="sm:text-base lg:text-xl">Projects</p>
         <hr className="h-1 mx-auto my-4 bg-[hsl(255,67%,5%)] border-1 rounded  dark:bg-white" />

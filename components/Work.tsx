@@ -8,7 +8,7 @@ const Work: React.FC<WorkProps> = ({ work}) => {
 
 
   return (
-    <div className="mt-4 flex flex-col w-full" >
+    <div className="mt-4 flex flex-col w-full" id="Experiences" >
       <div className="m-5">
         <p className="sm:text-base lg:text-xl">Experience</p>
         <hr className="h-1 mx-auto my-4 bg-[hsl(255,67%,5%)] border-1 rounded  dark:bg-white" />

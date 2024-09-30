@@ -11,7 +11,7 @@ const Education: React.FC<ProjectProps> = ({ education
 
 
   return (
-    <div className="mt-4" >
+    <div className="mt-4" id="Education">
 
       <div className="m-5">
         <p className="sm:text-base lg:text-xl">Education</p>
