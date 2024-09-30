@@ -13,7 +13,7 @@ export default function AboutMe() {
                     <br/><br/>
                     •	This personal website, refreshing my knowledge on React and Web Dev overall.
                     <br/>
-                    •	A passion pursuit at my Olin where I will use an Arduino and a small DC motor to unlock the dorm door without a key.
+                    •	A passion pursuit at Olin where I will use an Arduino and a small DC motor to unlock the dorm door without a key.
                     <br/>
                     •	A project using a smart plug API to track when the laundry machines are being used.
                     <br/>
