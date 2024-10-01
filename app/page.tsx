@@ -49,7 +49,7 @@ export default function Home() {
             id: key,
             sections: dataItem[1][key]
           }));
-          console.log("Display Items", displayItems)
+          //console.log("Display Items", displayItems)
           setData(displayItems);
           setLoading(false); // Set loading to false when data is fetched
         }
