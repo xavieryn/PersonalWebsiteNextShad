@@ -9,9 +9,7 @@ interface ProjectProps {
 const Projects: React.FC<ProjectProps> = ({ projects
 
 }) => {
-  //{console.log('Hi')}
   console.log(projects)
-
 
   return (
     <div className="mt-4 flex flex-col w-full" id="Projects" >

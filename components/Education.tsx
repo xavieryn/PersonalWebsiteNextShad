@@ -6,10 +6,8 @@ interface ProjectProps {
 const Education: React.FC<ProjectProps> = ({ education
 
 }) => {
-  //{console.log('Hi')}
-  console.log(education)
-
-
+  //console.log(education)
+  
   return (
     <div className="mt-4" id="Education">
 

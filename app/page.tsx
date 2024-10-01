@@ -24,7 +24,6 @@ export default function Home() {
 
   const [data, setData] = useState<SectionData[]>([]);
   //console.log("This is the data: ", data)
-  console.log(data);
   const [loading, setLoading] = useState(true); // Add a loading state
 
 
@@ -40,8 +39,6 @@ export default function Home() {
       // Listen for changes in the collection
       onValue(collectionRef, (snapshot) => {
         const dataItem = snapshot.val();
-
-        //console.log(dataItem)
 
         // Check if dataItem exists
         if (dataItem) {

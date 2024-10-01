@@ -4,8 +4,7 @@ interface WorkProps {
 }
 
 const Work: React.FC<WorkProps> = ({ work}) => {
-  console.log(work)
-
+  //console.log(work)
 
   return (
     <div className="mt-4 flex flex-col w-full" id="Experiences" >
