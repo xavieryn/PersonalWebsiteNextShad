@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import SocialMedia from "./SocialMedia";
-import { Moon, Sun } from "lucide-react"
+import Contents from "./Contents";
+import { Sun} from "lucide-react";
 import { useTheme } from "next-themes"
 import { WiMoonFull } from "react-icons/wi";
 
@@ -8,18 +9,17 @@ import { WiMoonFull } from "react-icons/wi";
 export default function Introduction() {
     const { theme, setTheme } = useTheme();
     const [isRotated, setIsRotated] = useState(false);
-    useEffect(() => {
-        setTheme('light');
-    }, []);
 
     const handleRotate = () => {
         setIsRotated(prev => !prev);
 
-        if(theme == 'light'){
+        if (theme == 'light') {
             setTheme('dark')
-        } else { setTheme('light')
+        } else {
+            setTheme('light')
         }
     };
+
 
     return (
         <div className="bg-center flex justify-center items-center flex-col h-screen w-full relative">
@@ -44,6 +44,7 @@ export default function Introduction() {
                         <WiMoonFull className="h-[50px] w-[50px] text-blue-500" />
                     </button>
                 </div>
+
                 <div className="z-20 items-center justify-content flex-col flex">
                     <div className="text-center text-xl lg:text-4xl lg:p-4 ">
                         <p className="mb-2">
@@ -51,21 +52,8 @@ export default function Introduction() {
                         </p>
                         <p>I&apos;m Xavier Nishikawa.</p>
                     </div>
-                    <ul>
-                        <a href='#AboutMe'>
-                            <li> About me</li>
-                        </a>
-                        <a href='#Experiences'>
-                            <li>Experiences</li>
-                        </a>
-                        <a href='#Projects'>
-                            <li>Projects</li>
-                        </a>
-                        <a href='#Education'>
-                            <li>Education</li>
-                        </a>
-                    </ul>
                     <SocialMedia />
+                    <Contents/>
                 </div>
             </div>
         </div>
