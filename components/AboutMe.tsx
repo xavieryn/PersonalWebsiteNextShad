@@ -3,7 +3,7 @@ import React from "react";
 export default function AboutMe() {
     return (
         <div className="flex justify-center items-center lg:h-screen w-full mb-10" id="AboutMe"> {/* Full screen height and width, centered content */}
-            <div className="text-center sm:text-sm lg:text-xl  ">
+            <div className="text-center sm:text-sm lg:text-base xl:text-xl  ">
                 <p className="mb-2">
                     Like every other programmer, I started with CS50. I quickly fell in love with the problem solving and the challenge. Over the next few years, I transitioned to Web Dev where I made a few React Apps, personal and for an internship.
                     <br/><br/>

@@ -42,7 +42,6 @@ export default function Home() {
 
         // Check if dataItem exists
         if (dataItem) {
-          console.log(dataItem[1]['Education'])
 
           // Convert the object values into an array
           const displayItems = Object.keys(dataItem[1]).map((key) => ({
