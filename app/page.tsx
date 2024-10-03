@@ -76,9 +76,9 @@ export default function Home() {
             ) : (
           <div>
             <AboutMe />
+            { data[0] &&<Education education = {data[0].sections}/> }
             { data[2] && <Work work={data[2].sections} />  }
             { data[1] &&<Projects projects = {data[1].sections}/> }
-            { data[0] &&<Education education = {data[0].sections}/> }
         
           </div>
           )}

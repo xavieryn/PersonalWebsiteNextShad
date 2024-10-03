@@ -1,60 +1,44 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Contents: React.FC = () => {
     const [activeSection, setActiveSection] = useState<string>('');
-    const sectionRefs = useRef<{ [key: string]: HTMLElement | null }>({});
 
     useEffect(() => {
-        console.log('Effect running. Active section:', activeSection);
-        console.log('Section refs:', sectionRefs.current);
+        const sections = ['AboutMe', 'Experiences', 'Projects', 'Education'];
 
-        const observerOptions: IntersectionObserverInit = {
-            root: null,
-            rootMargin: '-20% 0px -20% 0px',  // Adjust this as needed
-            threshold: 0,
-        };
+        const handleScroll = () => {
+            const scrollPosition = window.scrollY + window.innerHeight / 3;
 
-        const observerCallback: IntersectionObserverCallback = (entries) => {
-            entries.forEach((entry) => {
-                console.log(`Entry for ${entry.target.id}:`, entry.isIntersecting);
-                if (entry.isIntersecting && entry.target.id) {
-                    console.log(`Setting active section to: ${entry.target.id}`);
-                    setActiveSection(entry.target.id);
+            for (const section of sections) {
+                const element = document.getElementById(section);
+                if (element) {
+                    const { offsetTop, offsetHeight } = element;
+                    if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+                        setActiveSection(section);
+                        break;
+                    }
                 }
-            });
+            }
         };
 
-        const observer = new IntersectionObserver(observerCallback, observerOptions);
+        window.addEventListener('scroll', handleScroll);
+        handleScroll(); // Call once to set initial active section
 
-        Object.values(sectionRefs.current).forEach((ref) => {
-            if (ref) {
-                console.log(`Observing element with id: ${ref.id}`);
-                observer.observe(ref);
-            }
-        });
-
-        return () => observer.disconnect();
+        return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    // This effect will log whenever activeSection changes
     useEffect(() => {
         console.log('Active section changed to:', activeSection);
     }, [activeSection]);
 
-    const setRef = (id: string) => (el: HTMLElement | null) => {
-        console.log(`Setting ref for ${id}:`, el);
-        sectionRefs.current[id] = el;
-    };
-
     return (
         <div className="flex">
             <div className="grid justify-items-start pt-3">
-                {['AboutMe', 'Experiences', 'Projects', 'Education'].map((section) => (
+                {['AboutMe', 'Education', 'Experiences', 'Projects'].map((section) => (
                     <a 
                         key={section}
                         href={`#${section}`} 
-                        ref={setRef(section)} 
-                        className={`block ${activeSection === section ? 'font-bold text-lg' : ''}`}
+                        className={`block lg:${activeSection === section ? 'font-bold text-lg' : ''}`}
                     >
                         {section}
                     </a>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SocialMedia from "./SocialMedia";
 import Contents from "./Contents";
 import { Sun} from "lucide-react";
@@ -9,6 +9,10 @@ import { WiMoonFull } from "react-icons/wi";
 export default function Introduction() {
     const { theme, setTheme } = useTheme();
     const [isRotated, setIsRotated] = useState(false);
+
+    useEffect(() => {
+        setTheme('light');
+    }, []);
 
     const handleRotate = () => {
         setIsRotated(prev => !prev);
