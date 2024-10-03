@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from 'react';
 
 const Contents: React.FC = () => {
-    const [activeSection, setActiveSection] = useState<string>('');
+    const [activeSection, setActiveSection] = useState<string>('AboutMe');
 
     useEffect(() => {
         const sections = ['AboutMe', 'Experiences', 'Projects', 'Education'];
-
+        
         const handleScroll = () => {
-            const scrollPosition = window.scrollY + window.innerHeight / 3;
+            const scrollPosition = window.scrollY;
 
             for (const section of sections) {
                 const element = document.getElementById(section);
                 if (element) {
                     const { offsetTop, offsetHeight } = element;
-                    if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+                    if (scrollPosition >= offsetTop - window.innerHeight / 2 && scrollPosition < offsetTop + offsetHeight - window.innerHeight / 2) {
                         setActiveSection(section);
                         break;
                     }
@@ -21,29 +21,55 @@ const Contents: React.FC = () => {
             }
         };
 
-        window.addEventListener('scroll', handleScroll);
-        handleScroll(); // Call once to set initial active section
+        if (typeof window !== 'undefined') {
+            window.addEventListener('scroll', handleScroll);
+            handleScroll(); // Call once to set initial active section
+        }
 
-        return () => window.removeEventListener('scroll', handleScroll);
+        return () => {
+            if (typeof window !== 'undefined') {
+                window.removeEventListener('scroll', handleScroll);
+            }
+        }
     }, []);
 
-    useEffect(() => {
-        console.log('Active section changed to:', activeSection);
-    }, [activeSection]);
-
     return (
-        <div className="flex">
-            <div className="grid justify-items-start pt-3">
-                {['AboutMe', 'Education', 'Experiences', 'Projects'].map((section) => (
-                    <a 
-                        key={section}
-                        href={`#${section}`} 
-                        className={`block lg:${activeSection === section ? 'font-bold text-lg' : ''}`}
-                    >
+        <div className="flex flex-col space-y-1 pt-4">
+            {['AboutMe', 'Education', 'Experiences', 'Projects'].map((section) => (
+                <a 
+                    key={section}
+                    href={`#${section}`} 
+                    className={`
+                        group
+                        relative 
+                        flex 
+                        items-center
+                        transition-all 
+                        duration-300 
+                        ease-in-out
+                        lg: ${activeSection === section ? 'text-blue-600' : 'text-gray-600'}
+                    `}
+                >
+                    <span className={`
+                        absolute 
+                        left-0 
+                        h-0.5 
+                        bg-blue-600 
+                        transition-all 
+                        duration-300 
+                        ease-in-out
+                        lg: ${activeSection === section ? 'w-16' : 'w-6'}
+                    `}></span>
+                    <span className={`
+                        transition-all 
+                        duration-300 
+                        ease-in-out
+                        lg: ${activeSection === section ? 'ml-20' : 'ml-8'}
+                    `}>
                         {section}
-                    </a>
-                ))}
-            </div>
+                    </span>
+                </a>
+            ))}
         </div>
     );
 };

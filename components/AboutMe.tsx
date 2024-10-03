@@ -17,7 +17,7 @@ export default function AboutMe() {
                     <br/>
                     •	A project using a smart plug API to track when the laundry machines are being used.
                     <br/>
-                    •	A project that trains an AI model to better understand people with stutters.
+                    •	A project team that trains an AI model to better understand people with stutters.
 
 
 

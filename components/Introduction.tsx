@@ -49,7 +49,7 @@ export default function Introduction() {
                     </button>
                 </div>
 
-                <div className="z-20 items-center justify-content flex-col flex">
+                <div className="z-20 items-center justify-content flex-col flex lg:pt-5">
                     <div className="text-center text-xl lg:text-4xl lg:p-4 ">
                         <p className="mb-2">
                             Welcome to my website!
