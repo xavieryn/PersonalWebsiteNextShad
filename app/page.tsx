@@ -60,8 +60,6 @@ export default function Home() {
     fetchData();
   }, []);
   return (
-
-
     <div className=" flex min-h-full sm:w-full lg:flex-row flex-col  font-[family-name:var(--font-geist-sans)] overflow-hidden">
 
       {/* First section: Introduction (Left side on PC) */}

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 const Contents: React.FC = () => {
-    const [activeSection, setActiveSection] = useState<string>('AboutMe');
+    const [activeSection, setActiveSection] = useState<string>();
 
     useEffect(() => {
         const sections = ['AboutMe', 'Experiences', 'Projects', 'Education'];
@@ -34,7 +34,7 @@ const Contents: React.FC = () => {
     }, []);
 
     return (
-        <div className="flex flex-col space-y-1 pt-4">
+        <div className="flex flex-col space-y-1 pt-4 bg-border-3">
             {['AboutMe', 'Education', 'Experiences', 'Projects'].map((section) => (
                 <a 
                     key={section}
@@ -45,16 +45,16 @@ const Contents: React.FC = () => {
                         flex 
                         items-center
                         transition-all 
-                        duration-300 
+                        duration-200 
                         ease-in-out
-                        lg: ${activeSection === section ? 'text-blue-600' : 'text-gray-600'}
+                        lg: ${activeSection === section ?'dark:text-white light:text-black' : 'text-gray-400'}
                     `}
                 >
                     <span className={`
                         absolute 
                         left-0 
                         h-0.5 
-                        bg-blue-600 
+                        bg-[hsl(247,59,32)] 
                         transition-all 
                         duration-300 
                         ease-in-out

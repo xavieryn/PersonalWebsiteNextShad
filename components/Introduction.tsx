@@ -45,7 +45,7 @@ export default function Introduction() {
                         onClick={handleRotate}
                         className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 rounded-full p-2 bg-white dark:bg-gray-800 shadow-lg"
                     >
-                        <WiMoonFull className="h-[50px] w-[50px] text-blue-500" />
+                        <WiMoonFull className="h-[50px] w-[50px] text-[hsl(247,59,32)]" />
                     </button>
                 </div>
 
